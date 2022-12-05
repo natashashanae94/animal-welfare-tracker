@@ -3,9 +3,11 @@ import * as React from 'react';
 import AnimalList from '../components/AnimalList';
 import AssessmentsList from '../components/AssessmentsList';
 
-const MainContentArea = () => {
+const MainContentArea = ({componentToRender}) => {
     return(
-        <AnimalList />
+        <div>
+            {componentToRender}
+        </div>
     );
 }
 
