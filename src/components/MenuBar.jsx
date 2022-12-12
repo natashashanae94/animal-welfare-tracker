@@ -1,6 +1,6 @@
 import * as React from 'react';
 import AnimalList from '../components/AnimalList';
-import AssessmentList from '../components/AssessmentsList';
+import AssessmentList from '../components/AssessmentsList'
 import MainContentArea from '../components/MainContentArea';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -92,17 +92,18 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  //const [content, setContent] = React.useState(AnimalList);
-  //const components = [
-  //   {
-  //     component:AnimalList,
-  //     componentName: "AssessmentList"
-  //   },
-  //   {
-  //     component:AssessmentList,
-  //     componentName: "AssessmentList"
-  //   },
-  // ];
+  const [content, setContent] = React.useState(AnimalList);
+  const components = [
+    {
+      component:AnimalList,
+      componentName: "AssessmentList"
+    },
+    {
+      component:AssessmentList,
+      componentName: "AssessmentList"
+    },
+
+  ];
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -113,10 +114,10 @@ export default function MiniDrawer() {
   };
 
   // Takes a value, then uses it to render specific content into the Main Content Area depending on what menu link is clicked on.
-  // const swapContent = (value) => {
-  //   setContent(value);
+  const swapContent = (value) => {
+    setContent(value);
 
-  // }
+  }
 
 
   return (
